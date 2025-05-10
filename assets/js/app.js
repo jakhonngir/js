@@ -174,78 +174,78 @@
 
 //   10
 
-const order = {
-    customer: {
-        name: 'Asal',
-        contact: {
-            phone: '998901112233',
-            email: 'akosh@gmail.com'
-        }
-    },
-    items: [
-        { name: 'Laptop', price: 1200 },
-        { name: 'Mouse', price: 25 }
-    ],
-    payment: null,
-    shipping: {
-        address: {
-            city: 'Tashkent',
-            street: 'Yunusabad 5'
-        },
-        delivered: false
-    }
-}
-let number = order.customer.contact.phone;
-let email = order.customer.contact.email;
+// const order = {
+//     customer: {
+//         name: 'Asal',
+//         contact: {
+//             phone: '998901112233',
+//             email: 'akosh@gmail.com'
+//         }
+//     },
+//     items: [
+//         { name: 'Laptop', price: 1200 },
+//         { name: 'Mouse', price: 25 }
+//     ],
+//     payment: null,
+//     shipping: {
+//         address: {
+//             city: 'Tashkent',
+//             street: 'Yunusabad 5'
+//         },
+//         delivered: false
+//     }
+// }
+// let number = order.customer.contact.phone;
+// let email = order.customer.contact.email;
 
 
-//  number
+// //  number
 
-if (number || '') {
-    console.log(`customer phone: ${number}`);
-} else {
-    console.log('phone not available');
-}
+// if (number || '') {
+//     console.log(`customer phone: ${number}`);
+// } else {
+//     console.log('phone not available');
+// }
 
-//   email
+// //   email
  
-if (email || false) {
-    console.log(`email provided: ${email}`);
-} else {
-    console.log('No email provided');
-}
+// if (email || false) {
+//     console.log(`email provided: ${email}`);
+// } else {
+//     console.log('No email provided');
+// }
 
-//   paymet
+// //   paymet
 
-let pay = order.payment
-const paymet = pay ?? 'Paymet pending';
-console.log(paymet);
+// let pay = order.payment
+// const paymet = pay ?? 'Paymet pending';
+// console.log(paymet);
 
-//   price 
+// //   price 
 
-for (let i = 0; i < order.items.length; i++) {
-    let price = order.items[i].price;
-    const total = (...numbers) => {
-            return numbers.reduce((acc, curr) => acc + curr, 0);  
-        }
-    console.log(total(order.items[0].price, order.items[1].price) + '$');
-}
+// for (let i = 0; i < order.items.length; i++) {
+//     let price = order.items[i].price;
+//     const total = (...numbers) => {
+//             return numbers.reduce((acc, curr) => acc + curr, 0);  
+//         }
+//     console.log(total(order.items[0].price, order.items[1].price) + '$');
+// }
 
-//   city
+// //   city
 
-let city = order.shipping.address.city;
+// let city = order.shipping.address.city;
 
-if (city || false) {
-    console.log(`shipping to ${city}`);
+// if (city || false) {
+//     console.log(`shipping to ${city}`);
     
-} else {
-    console.log('Delivery address missing');
-}
+// } else {
+//     console.log('Delivery address missing');
+// }
 
-//   dilevered
+// //   dilevered
 
-let delivered = order.shipping.delivered;
+// let delivered = order.shipping.delivered;
 
-if (delivered && true) {
-    console.log('Order has been delivered');
-};
+// if (delivered && true) {
+//     console.log('Order has been delivered');
+// };
