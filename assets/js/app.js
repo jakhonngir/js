@@ -249,3 +249,33 @@
 // if (delivered && true) {
 //     console.log('Order has been delivered');
 // };
+
+//   12
+
+function Car(brand, color) {
+    this.brand = brand;
+    this.color = color;
+}
+
+Car.prototype.startEngine = function() {
+  console.log(`Starting ${this.brand} with ${this.color} color`);
+};
+
+const bmw = new Car("Bmw", "green");
+bmw.startEngine();
+
+
+const mers = new Car("mers", "black");
+
+const ElectricCar = Object.create(mers);
+
+ElectricCar.batteryLevel = 80;
+
+ElectricCar.charge = function() {
+  console.log(`Charging ${this.brand} to 100%`);
+};
+
+ElectricCar.startEngine();
+ElectricCar.charge();    
+console.log(ElectricCar.batteryLevel);
+
