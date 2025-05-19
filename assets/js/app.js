@@ -252,30 +252,99 @@
 
 //   12
 
-function Car(brand, color) {
-    this.brand = brand;
-    this.color = color;
-}
+// function Car(brand, color) {
+//     this.brand = brand;
+//     this.color = color;
+// }
 
-Car.prototype.startEngine = function() {
-  console.log(`Starting ${this.brand} with ${this.color} color`);
-};
+// Car.prototype.startEngine = function() {
+//   console.log(`Starting ${this.brand} with ${this.color} color`);
+// };
 
-const bmw = new Car("Bmw", "green");
-bmw.startEngine();
+// const bmw = new Car("Bmw", "green");
+// bmw.startEngine();
 
 
-const mers = new Car("mers", "black");
+// const mers = new Car("mers", "black");
 
-const ElectricCar = Object.create(mers);
+// const ElectricCar = Object.create(mers);
 
-ElectricCar.batteryLevel = 80;
+// ElectricCar.batteryLevel = 80;
 
-ElectricCar.charge = function() {
-  console.log(`Charging ${this.brand} to 100%`);
-};
+// ElectricCar.charge = function() {
+//   console.log(`Charging ${this.brand} to 100%`);
+// };
 
-ElectricCar.startEngine();
-ElectricCar.charge();    
-console.log(ElectricCar.batteryLevel);
+// ElectricCar.startEngine();
+// ElectricCar.charge();    
+// console.log(ElectricCar.batteryLevel);
+
+//
+
+
+const ism = document.querySelector('.name');
+const sureName = document.querySelector('.sureName');
+const parol = document.querySelector('.password');
+const btn = document.querySelector('.btn');
+const h1 = document.querySelector('.heading')
+const h2 = document.querySelector('.heading2')
+const h3 = document.querySelector('.heading3')
+
+btn.addEventListener('click', function () {
+  let ismValue = ism.value;
+  let sureNameValue = sureName.value;
+  let parolValue = parol.value;
+
+  var UppercaseLetter = ismValue.match(/[A-Z]/g)?.join('');
+  var LowercaseLetter = ismValue.match(/[a-z]/g)?.join('');
+
+  if (UppercaseLetter || LowercaseLetter) {
+    var ismValue1 = UppercaseLetter.toLowerCase();
+    var ismValue2 = LowercaseLetter.toUpperCase();
+  }
+
+  ismValue = ismValue1 + ismValue2
+
+  h1.innerHTML = `FirstName: ${ismValue}`
+  //
+  var UppercaseLetter = sureNameValue.match(/[A-Z]/g)?.join('');
+  var LowercaseLetter = sureNameValue.match(/[a-z]/g)?.join('');
+
+  if (UppercaseLetter || LowercaseLetter) {
+    var sureNameValue1 = UppercaseLetter.toLowerCase();
+    var sureNameValue2 = LowercaseLetter.toUpperCase();
+  }
+  sureNameValue = sureNameValue1 + sureNameValue2
+
+  h2.innerHTML = `SureName: ${sureNameValue}`
+  //
+
+  var UppercaseLetter = parolValue.match(/[A-Z]/g)?.join('');
+  var LowercaseLetter = parolValue.match(/[a-z]/g)?.join('');
+  var NumbercaseLetter = parolValue.match(/\d/g)?.join('');
+  var SymbolcaseLetter = parolValue.match(/[!?-]/g)?.join('');
+
+
+
+  if (UppercaseLetter || LowercaseLetter) {
+    var parolValue1 = UppercaseLetter.toLowerCase();
+    var parolValue2 = LowercaseLetter.toUpperCase();
+  }
+  parolValue = parolValue1 + parolValue2 + NumbercaseLetter + SymbolcaseLetter
+
+
+  for (let p = 0; p < parolValue.length; p++) {
+    if (parolValue.length < 10) {
+      return alert('parol 10tadan kam bolmasin')
+    }
+    if (SymbolcaseLetter) {
+
+    } else {
+      return alert('parolingizda !, ?, -, lardan biri qatnashsin')
+    }
+  }
+  h3.innerHTML = `password: ${parolValue}`
+
+})
+
 
